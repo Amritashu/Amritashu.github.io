@@ -1,0 +1,663 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Power Link Solution Pvt Ltd — Steel & Power Plant O&M, CHP/CPP, Civil, Mechanical & Electrical</title>
+<meta name="description" content="Power Link Solution Pvt Ltd delivers Operation & Maintenance for steel and power plants — including CHP & CPP works, civil, mechanical, electrical, structural steel and shutdown jobs for SAIL, NTPC and more, plus the new Hydrogen Plant at CRM-3, Bokaro Steel Plant, SAIL." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Marcellus&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --ink:#0E1726;
+    --ink-soft:#1B2638;
+    --paper:#F7F5F0;
+    --paper-2:#FFFFFF;
+    --muted:#6B7280;
+    --line:#E4E0D7;
+    --accent:#B07A2E;      /* warm bronze */
+    --accent-2:#C8995A;
+    --maxw:1180px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Inter',system-ui,sans-serif;
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:600;line-height:1.15;letter-spacing:-0.01em}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+  .eyebrow{font-family:'Inter',sans-serif;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:18px}
+
+  /* NAV */
+  header{position:fixed;top:0;left:0;right:0;z-index:50;transition:.35s}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:22px 28px;max-width:var(--maxw);margin:0 auto}
+  .brand{display:flex;align-items:center;gap:11px;color:#fff}
+  .brand .mark{height:34px;padding:0 12px;border-radius:9px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:grid;place-items:center;color:#fff;font-family:'Marcellus',serif;font-weight:400;font-size:14.5px;letter-spacing:1.5px;box-shadow:0 4px 13px -4px rgba(176,122,46,.55)}
+  .brand .bt{display:flex;flex-direction:column;line-height:1.1}
+  .brand .bt b{font-family:'Marcellus',serif;font-weight:400;font-size:18px;letter-spacing:.02em}
+  .brand small{font-size:10px;letter-spacing:.02em;color:rgba(255,255,255,.6);font-weight:500;margin-top:2px}
+  header.scrolled .brand small{color:var(--muted)}
+  .navlinks{display:flex;gap:34px;align-items:center}
+  .navlinks a{font-size:14px;color:rgba(255,255,255,.82);font-weight:400;transition:.2s}
+  .navlinks a:hover{color:#fff}
+  .nav-cta{border:1px solid rgba(255,255,255,.35);padding:9px 20px;border-radius:30px;font-size:13px!important;color:#fff!important}
+  .nav-cta:hover{background:#fff;color:var(--ink)!important;border-color:#fff}
+  header.scrolled{background:rgba(247,245,240,.92);backdrop-filter:blur(12px);box-shadow:0 1px 0 var(--line)}
+  header.scrolled .brand,header.scrolled .navlinks a{color:var(--ink)}
+  header.scrolled .navlinks a{color:#41495a}
+  header.scrolled .navlinks a:hover{color:var(--ink)}
+  header.scrolled .nav-cta{border-color:var(--ink);color:var(--ink)!important}
+  header.scrolled .nav-cta:hover{background:var(--ink);color:#fff!important}
+  .menu-btn{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px}
+  .menu-btn span{width:24px;height:2px;background:#fff;transition:.3s}
+  header.scrolled .menu-btn span{background:var(--ink)}
+
+  /* HERO */
+  .hero{position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:center;color:#fff;overflow:hidden}
+  .hero-photo{position:absolute;inset:0;background:url('https://d8j0ntlcm91z4.cloudfront.net/user_3DU40DzP6TGZoZfSobISbIM2HVB/hf_20260609_112137_618e2807-1242-4fd0-bd65-4887d2dfef07.png') center/cover no-repeat;transform:scale(1.05)}
+  .hero-bg{position:absolute;inset:0;background:linear-gradient(115deg,rgba(11,18,32,.92) 0%,rgba(22,33,58,.82) 55%,rgba(31,45,74,.7) 100%)}
+  .hero-bg::after{content:"";position:absolute;inset:0;background:
+    radial-gradient(900px 600px at 80% 15%,rgba(176,122,46,.28),transparent 60%),
+    radial-gradient(700px 500px at 5% 90%,rgba(80,120,200,.18),transparent 60%)}
+  .grid-lines{position:absolute;inset:0;opacity:.07;background-image:linear-gradient(rgba(255,255,255,.6) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.6) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(circle at 70% 40%,#000,transparent 80%)}
+  .hero>.wrap{position:relative;z-index:2;width:100%;flex:1 0 auto;display:flex;align-items:center}
+  .hero-inner{max-width:760px;padding:40px 0}
+  .hero h1{font-size:clamp(40px,6vw,72px);font-weight:600;margin:14px 0 22px}
+  .hero h1 em{font-style:normal;color:var(--accent-2)}
+  .hero p{font-size:clamp(16px,2vw,19px);color:rgba(255,255,255,.78);font-weight:300;max-width:580px;margin-bottom:38px}
+  .btns{display:flex;gap:16px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:9px;padding:15px 30px;border-radius:34px;font-size:15px;font-weight:500;transition:.25s;cursor:pointer;border:none}
+  .btn-primary{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff;box-shadow:0 10px 30px -8px rgba(176,122,46,.6)}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 38px -8px rgba(176,122,46,.7)}
+  .btn-ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.3)}
+  .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:#fff}
+  .hero-meta{position:relative;z-index:2;width:100%;padding-bottom:40px}
+  .hero-meta .wrap{display:flex;gap:48px;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.13);padding-top:24px}
+  .hero-meta .item{font-size:13px;color:rgba(255,255,255,.6)}
+  .hero-meta .item b{display:block;font-family:'Playfair Display',serif;font-size:26px;color:#fff;font-weight:600;letter-spacing:0}
+
+  /* SECTION */
+  section{padding:110px 0}
+  .sec-head{max-width:720px;margin-bottom:64px}
+  .sec-head h2{font-size:clamp(30px,4vw,46px)}
+  .sec-head p{color:var(--muted);font-size:17px;margin-top:18px;font-weight:300}
+
+  /* SERVICES */
+  .svc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+  .card{background:var(--paper-2);border:1px solid var(--line);border-radius:18px;padding:40px 36px;transition:.3s;position:relative;overflow:hidden}
+  .card::before{content:"";position:absolute;top:0;left:0;width:100%;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent-2));transform:scaleX(0);transform-origin:left;transition:.4s}
+  .card:hover{transform:translateY(-6px);box-shadow:0 24px 50px -24px rgba(14,23,38,.22);border-color:transparent}
+  .card:hover::before{transform:scaleX(1)}
+  .card .ico{width:52px;height:52px;border-radius:13px;background:#F2ECE0;display:grid;place-items:center;margin-bottom:24px;color:var(--accent)}
+  .card h3{font-size:23px;margin-bottom:12px}
+  .card p{color:var(--muted);font-size:15px;font-weight:300}
+  .card .tag{display:inline-block;margin-top:18px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);font-weight:600}
+  .card.span-2{grid-column:1 / -1}
+
+  /* O&M OPERATIONS */
+  #operations{background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .ops-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:60px;align-items:start}
+  .ops-left h3{font-size:22px;margin-bottom:8px}
+  .ops-left p{color:var(--muted);font-size:15px;font-weight:300;margin-bottom:26px}
+  .mp-grid{display:flex;flex-wrap:wrap;gap:10px}
+  .mp{font-size:13.5px;padding:10px 18px;border-radius:30px;background:var(--paper);border:1px solid var(--line);color:var(--ink-soft);font-weight:500}
+  .mp.lead{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff;border-color:transparent}
+  .ops-img{width:100%;height:230px;object-fit:cover;border-radius:16px;margin-top:28px;border:1px solid var(--line)}
+  .sites{display:grid;gap:16px}
+  .site{display:flex;gap:20px;background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:24px 26px;transition:.3s}
+  .site:hover{box-shadow:0 18px 40px -24px rgba(14,23,38,.22);transform:translateY(-3px)}
+  .site .loc{flex-shrink:0;width:104px;font-family:'Playfair Display',serif;font-weight:600;font-size:18px;color:var(--accent);line-height:1.25}
+  .site .loc small{display:block;font-family:'Inter';font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:500;margin-top:4px}
+  .site .scopes{display:flex;flex-wrap:wrap;gap:8px;align-content:flex-start}
+  .site .scopes span{font-size:13px;padding:6px 13px;border-radius:8px;background:#F2ECE0;color:var(--ink-soft)}
+
+  /* FEATURE / hydrogen project */
+  .feature{background:var(--ink);color:#fff;border-radius:24px;padding:0;overflow:hidden;display:grid;grid-template-columns:1.1fr .9fr}
+  .feature-text{padding:64px 56px}
+  .feature .badge{display:inline-flex;align-items:center;gap:8px;background:rgba(176,122,46,.16);border:1px solid rgba(200,153,90,.35);color:var(--accent-2);font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:7px 16px;border-radius:30px;margin-bottom:26px}
+  .feature h2{font-size:clamp(28px,3.4vw,40px);margin-bottom:20px}
+  .feature p{color:rgba(255,255,255,.74);font-weight:300;font-size:16px;margin-bottom:18px}
+  .feature ul{list-style:none;margin-top:26px;display:grid;gap:14px}
+  .feature li{display:flex;gap:13px;font-size:15px;color:rgba(255,255,255,.85);font-weight:300}
+  .feature li svg{flex-shrink:0;margin-top:4px;color:var(--accent-2)}
+  .feature-visual{position:relative;background:url('https://d8j0ntlcm91z4.cloudfront.net/user_3DU40DzP6TGZoZfSobISbIM2HVB/hf_20260609_112141_a6ff7140-a143-4766-a52a-0999032e509c.png') center/cover no-repeat,linear-gradient(150deg,#16213A,#22324F)}
+  .feature-visual::after{content:"";position:absolute;inset:0;background:linear-gradient(160deg,rgba(14,23,38,.5),rgba(22,33,58,.78)),radial-gradient(500px 400px at 60% 30%,rgba(176,122,46,.35),transparent 65%)}
+  .fv-content{position:absolute;inset:0;display:grid;place-items:center;padding:40px;text-align:center;z-index:2}
+  .fv-content .ring{width:170px;height:170px;border-radius:50%;border:1px solid rgba(255,255,255,.18);display:grid;place-items:center;position:relative;animation:spin 22s linear infinite}
+  .fv-content .ring::before{content:"";position:absolute;inset:18px;border-radius:50%;border:1px dashed rgba(200,153,90,.5)}
+  .fv-content .core{font-family:'Playfair Display',serif;font-size:46px;color:#fff}
+  .fv-content .core small{display:block;font-family:'Inter';font-size:12px;letter-spacing:.2em;color:var(--accent-2);text-transform:uppercase;margin-top:6px}
+  @keyframes spin{to{transform:rotate(360deg)}}
+
+  /* ABOUT / stats */
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+  .about-grid p{color:var(--muted);font-size:16px;font-weight:300;margin-bottom:18px}
+  .about-img{width:100%;height:240px;object-fit:cover;border-radius:18px;margin-bottom:20px;border:1px solid var(--line)}
+  .stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+  .stat{background:var(--paper-2);padding:38px 30px}
+  .stat b{font-family:'Playfair Display',serif;font-size:42px;color:var(--ink);display:block;line-height:1}
+  .stat span{color:var(--muted);font-size:14px;margin-top:8px;display:block}
+  .values{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+  .values .v{font-size:13px;padding:9px 18px;border:1px solid var(--line);border-radius:30px;background:var(--paper-2);color:var(--ink-soft)}
+
+  /* CONTACT */
+  #contact{background:var(--ink);color:#fff}
+  .contact-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:64px}
+  #contact .eyebrow{color:var(--accent-2)}
+  #contact h2{font-size:clamp(30px,4vw,44px);color:#fff}
+  #contact .lead{color:rgba(255,255,255,.72);font-weight:300;margin-top:18px;font-size:16px}
+  .cinfo{margin-top:40px;display:grid;gap:22px}
+  .cinfo .row{display:flex;gap:16px;align-items:flex-start}
+  .cinfo .row svg{color:var(--accent-2);flex-shrink:0;margin-top:3px}
+  .cinfo .row b{display:block;font-weight:500;font-size:15px}
+  .cinfo .row span{color:rgba(255,255,255,.6);font-size:14px}
+  form{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:40px}
+  .field{margin-bottom:20px}
+  .field label{display:block;font-size:13px;color:rgba(255,255,255,.7);margin-bottom:8px;font-weight:500}
+  .field input,.field textarea{width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:11px;padding:14px 16px;color:#fff;font-family:inherit;font-size:15px;transition:.2s}
+  .field input:focus,.field textarea:focus{outline:none;border-color:var(--accent-2);background:rgba(255,255,255,.09)}
+  .field textarea{resize:vertical;min-height:110px}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  form .btn-primary{width:100%;justify-content:center;margin-top:6px}
+  .form-note{font-size:13px;color:rgba(255,255,255,.5);margin-top:16px;text-align:center}
+  .ok-msg{display:none;background:rgba(176,122,46,.15);border:1px solid var(--accent-2);color:var(--accent-2);padding:14px;border-radius:11px;font-size:14px;text-align:center;margin-top:16px}
+  .ok-msg.err{background:rgba(205,70,70,.12);border-color:#d06a6a;color:#d8807f}
+  .form-note code{font-size:12px;background:rgba(0,0,0,.06);padding:1px 5px;border-radius:4px}
+
+  /* FOOTER */
+  footer{background:#0A111E;color:rgba(255,255,255,.55);padding:54px 0 30px}
+  .foot-top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:30px;padding-bottom:34px;border-bottom:1px solid rgba(255,255,255,.08)}
+  .foot-top .brand{color:#fff}
+  .foot-top .brand small{color:rgba(255,255,255,.4)}
+  .foot-links{display:flex;gap:30px;flex-wrap:wrap;font-size:14px}
+  .foot-links a:hover{color:#fff}
+  .foot-bottom{padding-top:24px;font-size:13px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+  .foot-creds{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;padding:22px 0 4px}
+  .foot-creds span{font-size:11.5px;letter-spacing:.03em;color:rgba(255,255,255,.62);border:1px solid rgba(255,255,255,.15);padding:6px 14px;border-radius:30px}
+
+  /* WHY US */
+  #why{background:var(--ink);color:#fff}
+  #why .eyebrow{color:var(--accent-2)}
+  #why .sec-head h2{color:#fff}
+  #why .sec-head p{color:rgba(255,255,255,.72)}
+  .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .why{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:30px 28px;transition:.3s}
+  .why:hover{background:rgba(255,255,255,.07);transform:translateY(-4px)}
+  .why .wico{width:46px;height:46px;border-radius:12px;background:rgba(176,122,46,.18);display:grid;place-items:center;color:var(--accent-2);margin-bottom:18px}
+  .why h3{font-size:18px;margin-bottom:9px;color:#fff}
+  .why p{font-size:14px;color:rgba(255,255,255,.72);font-weight:300}
+
+  /* EXPERTISE (FGD & ESP) */
+  #expertise{background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .exp-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .exp{border:1px solid var(--line);border-radius:18px;padding:40px 36px;background:var(--paper);transition:.3s;position:relative;overflow:hidden}
+  .exp::before{content:"";position:absolute;top:0;left:0;width:100%;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent-2));transform:scaleX(0);transform-origin:left;transition:.4s}
+  .exp:hover{transform:translateY(-5px);box-shadow:0 24px 50px -26px rgba(14,23,38,.22)}
+  .exp:hover::before{transform:scaleX(1)}
+  .exp .ehead{display:flex;align-items:center;gap:16px;margin-bottom:18px}
+  .exp .eico{width:52px;height:52px;border-radius:13px;background:#F2ECE0;display:grid;place-items:center;color:var(--accent);flex-shrink:0}
+  .exp .ekick{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:600}
+  .exp h3{font-size:23px;line-height:1.2}
+  .exp p{color:var(--muted);font-size:15px;font-weight:300;margin-bottom:18px}
+  .exp .estats{display:flex;flex-wrap:wrap;gap:10px}
+  .exp .estat{font-size:13px;font-weight:600;color:var(--ink);background:#F2ECE0;padding:8px 16px;border-radius:30px}
+
+  /* METRICS STRIP */
+  .metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:18px;overflow:hidden;margin-bottom:60px}
+  .metric{background:var(--paper-2);padding:34px 26px;text-align:center}
+  .metric b{font-family:'Playfair Display',serif;font-size:38px;color:var(--accent);display:block;line-height:1}
+  .metric span{color:var(--muted);font-size:13.5px;margin-top:10px;display:block}
+
+  /* TRACK RECORD */
+  #track{background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .proj-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+  .proj{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:34px 32px;transition:.3s;position:relative}
+  .proj:hover{transform:translateY(-5px);box-shadow:0 24px 50px -26px rgba(14,23,38,.22);border-color:transparent}
+  .proj .pcat{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:14px}
+  .proj h3{font-size:21px;margin-bottom:10px;line-height:1.25}
+  .proj .pclient{font-size:13.5px;color:var(--ink-soft);font-weight:500;margin-bottom:14px}
+  .proj p{color:var(--muted);font-size:14.5px;font-weight:300}
+  .proj .pmetric{display:inline-block;margin-top:18px;font-size:13px;font-weight:600;color:var(--ink);background:#F2ECE0;padding:7px 16px;border-radius:30px}
+  .proj.flag{grid-column:1 / -1;background:linear-gradient(135deg,#16213A,#22324F);color:#fff;border-color:transparent}
+  .proj.flag h3,.proj.flag .pmetric{color:#fff}
+  .proj.flag .pclient{color:rgba(255,255,255,.7)}
+  .proj.flag p{color:rgba(255,255,255,.8)}
+  .proj.flag .pcat{color:var(--accent-2)}
+  .proj.flag .pmetric{background:rgba(176,122,46,.25)}
+
+  /* O&M LEDGER */
+  .om-head{display:flex;align-items:center;gap:10px;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);font-weight:600;margin-bottom:10px}
+  .om-dot{width:8px;height:8px;border-radius:50%;background:var(--muted);flex-shrink:0}
+  .om-dot.live{background:#3aa76d;box-shadow:0 0 0 3px rgba(58,167,109,.18)}
+  .om-list{border-top:1px solid var(--line)}
+  .om-row{display:grid;grid-template-columns:.82fr 1.18fr;gap:24px;padding:16px 4px;border-bottom:1px solid var(--line);align-items:baseline}
+  .om-row .who{font-weight:600;color:var(--ink);font-size:15px;line-height:1.3}
+  .om-row .who small{display:block;font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-top:3px}
+  .om-row .what{color:var(--muted);font-size:14.5px;font-weight:300}
+
+  /* PARTNERS */
+  #partners{padding:84px 0;text-align:center}
+  #partners .lbl{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:40px}
+  .logos{display:flex;flex-wrap:wrap;justify-content:center;align-items:stretch;gap:16px}
+  .logo{display:flex;align-items:center;gap:14px;padding:18px 24px;border:1px solid var(--line);border-radius:14px;background:var(--paper-2);transition:.3s;min-width:210px}
+  .logo:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:0 16px 34px -22px rgba(14,23,38,.25)}
+  .logo img{height:36px;width:auto;max-width:124px;object-fit:contain;flex-shrink:0;transition:.3s}
+  .logo-name{font-family:'Playfair Display',serif;font-weight:600;font-size:18px;letter-spacing:.01em;color:var(--ink);line-height:1.2;text-align:left}
+
+  .reveal{opacity:0;transform:translateY(28px);transition:.7s cubic-bezier(.2,.7,.3,1)}
+  .reveal.in{opacity:1;transform:none}
+
+  @media(max-width:900px){
+    .navlinks{position:fixed;inset:0 0 0 auto;width:78%;max-width:320px;background:var(--ink);flex-direction:column;justify-content:center;padding:40px;transform:translateX(100%);transition:.35s;gap:26px}
+    .navlinks.open{transform:none}
+    .navlinks a{color:#fff!important;font-size:18px}
+    .menu-btn{display:flex;z-index:60}
+    .svc-grid,.feature,.about-grid,.contact-grid,.stats,.two,.ops-grid,.proj-grid,.why-grid,.exp-grid{grid-template-columns:1fr}
+    .om-row{grid-template-columns:1fr;gap:5px;padding:14px 4px}
+    .metrics{grid-template-columns:1fr 1fr}
+    .ops-grid{gap:44px}
+    .site .loc{width:88px}
+    .feature-visual{min-height:240px}
+    .feature-text{padding:44px 32px}
+    .about-grid{gap:40px}
+    section{padding:80px 0}
+  }
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <nav class="nav">
+    <a href="#home" class="brand">
+      <span class="mark">PLSPL</span>
+      <span class="bt"><b>Power Link Solution</b><small>Private&nbsp;Limited</small></span>
+    </a>
+    <div class="navlinks" id="navlinks">
+      <a href="#om">O&amp;M</a>
+      <a href="#projects">Projects</a>
+      <a href="#why">Why Us</a>
+      <a href="#partners">Clients</a>
+      <a href="#contact" class="nav-cta">Contact Us</a>
+    </div>
+    <button class="menu-btn" id="menuBtn" aria-label="Menu"><span></span><span></span><span></span></button>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-photo"></div>
+  <div class="hero-bg"></div>
+  <div class="wrap">
+    <div class="hero-inner">
+      <div class="eyebrow">Industrial Operations, Maintenance &amp; Project Execution</div>
+      <h1>The partner steel &amp; power plants trust — to <em>run, maintain and build</em>.</h1>
+      <p>From round-the-clock Operation &amp; Maintenance, manpower supply and shutdown support to turnkey project execution in civil, mechanical, electrical and steel-structure works — we deliver for steel and power plants across India, and we're ready to take on whatever your site needs next.</p>
+      <div class="btns">
+        <a href="#contact" class="btn btn-primary">Start a Conversation →</a>
+        <a href="#om" class="btn btn-ghost">What We Do</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-meta">
+    <div class="wrap">
+      <div class="item"><b>End-to-End</b>O&amp;M to turnkey projects</div>
+      <div class="item"><b>Steel &amp; Power</b>Sectors we serve</div>
+      <div class="item"><b>Since 2012</b>13+ years of operations</div>
+      <div class="item"><b>Multi-Client</b>Public sector · utilities · EPCs</div>
+    </div>
+  </div>
+</section>
+
+<!-- O&M VERTICAL -->
+<section id="om">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Operation &amp; Maintenance</div>
+      <h2>Keeping plants running, round the clock.</h2>
+      <p>We handle the day-to-day operation and maintenance of steel, power and process plants — backed by the skilled workforce we supply and manage, and rapid shutdown support when production is on the line.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="card reveal">
+        <div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/><circle cx="12" cy="12" r="3.2"/></svg></div>
+        <h3>Steel Plant O&amp;M</h3>
+        <p>Operation &amp; maintenance across integrated steel plant facilities — Traffic, Coke Ovens, Blast Furnace, conveyor systems, RMP, ESP and Steel Melting Shops — ensuring uptime, asset reliability and safe operations.</p>
+        <span class="tag">Steel</span>
+      </div>
+      <div class="card reveal">
+        <div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 21h18M6 21V7l4-3 4 3v14M14 21V11l4-2v12M9 9h2M9 13h2M9 17h2"/></svg></div>
+        <h3>Power Plant O&amp;M — CHP &amp; CPP</h3>
+        <p>Operation &amp; maintenance of Coal Handling Plants (CHP) and Captive Power Plants (CPP) — conveyor systems, material handling, boilers and balance-of-plant — kept running safely and reliably.</p>
+        <span class="tag">Power</span>
+      </div>
+      <div class="card reveal">
+        <div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+        <h3>Manpower Supply</h3>
+        <p>We supply and manage a skilled, qualified workforce for plant O&amp;M — mobilised quickly, scaled to demand and deployed for safe, round-the-clock operations.</p>
+        <span class="tag">Workforce</span>
+      </div>
+      <div class="card reveal">
+        <div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2a10 10 0 100 20 10 10 0 000-20z"/><path d="M12 7v5l3 2"/></svg></div>
+        <h3>Mechanical &amp; Electrical Shutdown Jobs</h3>
+        <p>Planned and emergency shutdown maintenance executed within tight windows to restore production fast — overhauls, repairs, replacements, inspection and recommissioning.</p>
+        <span class="tag">Time-Critical</span>
+      </div>
+    </div>
+
+    <div class="sec-head reveal" style="margin-top:66px;margin-bottom:34px">
+      <div class="eyebrow">O&amp;M Footprint</div>
+      <h2 style="font-size:clamp(26px,3.4vw,38px)">Where we run O&amp;M.</h2>
+      <p>Across SAIL's steel plants, captive power utilities and process complexes — here is the day-to-day work we keep running.</p>
+    </div>
+
+    <div class="om-block reveal">
+      <div class="om-head"><span class="om-dot live"></span>Currently ongoing</div>
+      <div class="om-list">
+        <div class="om-row"><div class="who">Bokaro Steel Plant<small>SAIL · Blast Furnace</small></div><div class="what">Comprehensive maintenance of the conveyor series</div></div>
+        <div class="om-row"><div class="who">Bokaro Steel Plant<small>SAIL · Coke Oven</small></div><div class="what">O&amp;M of the feeding section — CHP, CO &amp; CC</div></div>
+        <div class="om-row"><div class="who">Bokaro Steel Plant<small>SAIL · RMP</small></div><div class="what">Mechanical maintenance of conveyor belts and dusting systems</div></div>
+        <div class="om-row"><div class="who">Bokaro Steel Plant<small>SAIL · ESP</small></div><div class="what">Annual maintenance contract (AMC) for 6 ESPs</div></div>
+        <div class="om-row"><div class="who">Bokaro Steel Plant<small>SAIL · Traffic</small></div><div class="what">Outsourcing of loco operations with technological support</div></div>
+        <div class="om-row"><div class="who">Bokaro Power Supply Co. (BPSCL)<small>Bokaro</small></div><div class="what">Supervision of the Coal Handling Plant (CHP)</div></div>
+        <div class="om-row"><div class="who">Durgapur Steel Plant<small>SAIL · Traffic</small></div><div class="what">Dry leasing and support services for loco operations</div></div>
+        <div class="om-row"><div class="who">IISCO Steel Plant, Burnpur<small>SAIL · Traffic</small></div><div class="what">Outsourcing of traffic operations</div></div>
+        <div class="om-row"><div class="who">HURL, Sindri<small>Urea / Process Plant</small></div><div class="what">Housekeeping &amp; mechanical maintenance of the Urea Plant — heater cleaning, filter cleaning and tube-leakage</div></div>
+      </div>
+    </div>
+
+    <div class="om-block reveal" style="margin-top:36px">
+      <div class="om-head"><span class="om-dot"></span>Previously executed</div>
+      <div class="om-list">
+        <div class="om-row"><div class="who">Bokaro Power Supply Co. (BPSCL)<small>Bokaro</small></div><div class="what">AMC — preventive &amp; running maintenance of boiler and boiler auxiliaries</div></div>
+        <div class="om-row"><div class="who">Bokaro Power Supply Co. (BPSCL)<small>Bokaro</small></div><div class="what">O&amp;M of CHP and CPP</div></div>
+        <div class="om-row"><div class="who">Bokaro Power Supply Co. (BPSCL)<small>Bokaro</small></div><div class="what">Renovation of Wagon Tippler</div></div>
+        <div class="om-row"><div class="who">DTPS, Durgapur<small>DVC</small></div><div class="what">Mechanical maintenance of the Coal Handling Plant (CHP)</div></div>
+        <div class="om-row"><div class="who">Barauni Thermal Power Station<small>NTPC · CHP</small></div><div class="what">Comprehensive O&amp;M of the Coal Handling Plant — mechanical, electrical, C&amp;I and housekeeping</div></div>
+        <div class="om-row"><div class="who">NSPCL, Bhilai<small>NTPC–SAIL JV</small></div><div class="what">Maintenance of Wagon Tippler, Radial Stacker &amp; Reclaimer and associated systems</div></div>
+        <div class="om-row"><div class="who">Bihar State Power Generation Ltd<small>Power</small></div><div class="what">Overall housekeeping of Plant No. 7</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS VERTICAL -->
+<section id="projects">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Projects &amp; EPC</div>
+      <h2>Turnkey project execution, end to end.</h2>
+      <p>We take on civil, mechanical, electrical and steel-structure works — from individual packages to complete EPC and turnkey scopes, design through commissioning — for steel and power plants and the EPC majors that build them. If it needs building, commissioning or delivering, we're ready for it.</p>
+      <div class="values" style="margin-top:24px">
+        <span class="v">Civil</span>
+        <span class="v">Mechanical</span>
+        <span class="v">Electrical</span>
+        <span class="v">Supply, Fabrication &amp; Erection</span>
+        <span class="v">EPC / Turnkey</span>
+      </div>
+    </div>
+
+    <div class="metrics reveal">
+      <div class="metric"><b>Green H₂</b><span>Hydrogen electrolysis plant, Bokaro</span></div>
+      <div class="metric"><b>2×500</b><span>MW FGD power project</span></div>
+      <div class="metric"><b>6 ESPs</b><span>Erected &amp; commissioned — zero accidents</span></div>
+      <div class="metric"><b>518 MT</b><span>Structural steel, DSP Coke Oven Battery-4</span></div>
+    </div>
+
+    <div class="proj-grid">
+      <div class="proj reveal">
+        <div class="pcat">Clean Energy · Hydrogen</div>
+        <h3>Hydrogen Electrolysis Plant</h3>
+        <div class="pclient">Client: Jakson Limited · CRM-III, Bokaro Steel Plant, SAIL</div>
+        <p>Turnkey-style delivery of the main package for the hydrogen electrolysis plant — design &amp; engineering, civil buildings, structural steel (supply, fabrication &amp; erection), mechanical, HT/LT electrical and PLC automation, hydrogen/nitrogen/water piping, and commissioning with performance-guarantee tests. A step toward green steelmaking.</p>
+        <span class="pmetric">Design-to-commissioning</span>
+      </div>
+      <div class="proj reveal">
+        <div class="pcat">Power · FGD</div>
+        <h3>FGD System — Koderma Thermal Power Station</h3>
+        <div class="pclient">Client: Thermax Ltd · DVC, Jharkhand</div>
+        <p>Fabrication, erection &amp; painting of ducts, pipe-rack and compressor-house structures, plus specialist manpower for seal-air piping and booster-fan modifications across the 2×500 MW FGD project.</p>
+        <span class="pmetric">2×500 MW FGD</span>
+      </div>
+      <div class="proj reveal">
+        <div class="pcat">Emission Control · ESP</div>
+        <h3>6 × ESP — Refractory Material Plant</h3>
+        <div class="pclient">Client: Thermax Ltd · Refractory Material Plant, Bokaro Steel Plant, SAIL</div>
+        <p>Erection &amp; commissioning of six electrostatic precipitators with allied gas-handling equipment — 1,56,000 m³/hr at &lt;50 mg/Nm³ emission, completed with a zero-accident safety record.</p>
+        <span class="pmetric">1,56,000 m³/hr</span>
+      </div>
+      <div class="proj reveal">
+        <div class="pcat">Emission Control · ESP</div>
+        <h3>ESP Renovation &amp; Retrofitting — SMS-II</h3>
+        <div class="pclient">Client: Hindustan Steelworks Construction Ltd · SMS-II, Bokaro Steel Plant, SAIL</div>
+        <p>Renovation, retrofitting and testing of the ESP system serving the Steel Melting Shop (SMS-II / HMDS) at Bokaro Steel Plant, SAIL — restoring emission performance and reliability.</p>
+        <span class="pmetric">Retrofit &amp; testing</span>
+      </div>
+      <div class="proj reveal">
+        <div class="pcat">Structural Steel</div>
+        <h3>TOPR Structures — Coke Oven Battery-4, DSP</h3>
+        <div class="pclient">Client: Bhilai Engineering Corporation · Durgapur Steel Plant</div>
+        <p>Fabrication, supply, erection, alignment and welding of TOPR structures for Coke Oven Battery-4 at Durgapur Steel Plant — large-scale structural steel delivered to EPC schedule.</p>
+        <span class="pmetric">≈ 518 MT structural steel</span>
+      </div>
+      <div class="proj reveal">
+        <div class="pcat">Structural Steel</div>
+        <h3>Structural Steel — Sinter Plant-II</h3>
+        <div class="pclient">Client: Larsen &amp; Toubro (L&amp;T) · Bokaro Steel Plant, SAIL</div>
+        <p>Supply, fabrication and on-site erection of MS painted structural steel (≈ 300 MT) for Bokaro Sinter Plant-II — heavy structures delivered end-to-end to L&amp;T's project schedule.</p>
+        <span class="pmetric">≈ 300 MT · supply, fab &amp; erection</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- PARTNERS -->
+<section id="partners">
+  <div class="wrap reveal">
+    <div class="lbl">Clients &amp; Partners We Work With</div>
+    <div class="logos" id="logos">
+      <div class="logo"><img src="logos/sail.png" alt="SAIL logo" onerror="this.remove()" /><span class="logo-name">SAIL</span></div>
+      <div class="logo"><img src="logos/ntpc.png" alt="NTPC logo" onerror="this.remove()" /><span class="logo-name">NTPC</span></div>
+      <div class="logo"><img src="logos/dvc.png" alt="DVC logo" onerror="this.remove()" /><span class="logo-name">DVC</span></div>
+      <div class="logo"><img src="logos/lt.png" alt="L&amp;T logo" onerror="this.remove()" /><span class="logo-name">Larsen &amp; Toubro</span></div>
+      <div class="logo"><img src="logos/thermax.png" alt="Thermax logo" onerror="this.remove()" /><span class="logo-name">Thermax</span></div>
+      <div class="logo"><img src="logos/jakson.png" alt="Jakson logo" onerror="this.remove()" /><span class="logo-name">Jakson</span></div>
+      <div class="logo"><img src="logos/bec.png" alt="Bhilai Engineering logo" onerror="this.remove()" /><span class="logo-name">Bhilai Engineering</span></div>
+      <div class="logo"><img src="logos/hscl.png" alt="HSCL logo" onerror="this.remove()" /><span class="logo-name">HSCL</span></div>
+      <div class="logo"><img src="logos/tataprojects.png" alt="Tata Projects logo" onerror="this.remove()" /><span class="logo-name">Tata Projects</span></div>
+      <div class="logo"><img src="logos/borl.png" alt="Bharat Oman Refineries logo" onerror="this.remove()" /><span class="logo-name">Bharat Oman Refineries</span></div>
+      <div class="logo"><img src="logos/hurl.png" alt="HURL logo" onerror="this.remove()" /><span class="logo-name">Hindustan Urvarak &amp; Rasayan</span></div>
+      <div class="logo"><img src="logos/vedanta.png" alt="Vedanta logo" onerror="this.remove()" /><span class="logo-name">Vedanta</span></div>
+      <div class="logo"><img src="logos/siemens.png" alt="Siemens logo" onerror="this.remove()" /><span class="logo-name">Siemens</span></div>
+      <div class="logo"><img src="logos/utilitypowertech.png" alt="Utility Powertech logo" onerror="this.remove()" /><span class="logo-name">Utility Powertech</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="reveal">
+        <div class="eyebrow">Who We Are</div>
+        <h2 style="font-size:clamp(28px,3.6vw,42px);margin-bottom:24px">Built on reliability, driven by ambition.</h2>
+        <p>Power Link Solution Pvt Ltd is an industrial operations and engineering company serving India's steel and power sectors in equal measure. We pair hands-on plant O&amp;M expertise with multidisciplinary execution in civil, mechanical, electrical and steel-structure works.</p>
+        <p>From public-sector producers and power utilities to EPC majors like Thermax, Jakson and Bhilai Engineering Corporation, our clients return to us for one reason: dependable execution. Our role in the new Hydrogen Plant at Bokaro reflects that same commitment to operational excellence, safety, and a cleaner industrial future.</p>
+        <div class="values">
+          <span class="v">Safety First</span>
+          <span class="v">Operational Excellence</span>
+          <span class="v">Skilled Workforce</span>
+          <span class="v">On-Time Delivery</span>
+        </div>
+      </div>
+      <div class="reveal">
+        <img class="about-img" src="https://d8j0ntlcm91z4.cloudfront.net/user_3DU40DzP6TGZoZfSobISbIM2HVB/hf_20260609_113303_011be26c-fcc9-4ca5-96a4-e0cf77cf34fc.png" alt="Thermal power plant with cooling towers and coal handling plant" loading="lazy" />
+        <div class="stats">
+          <div class="stat"><b>O&amp;M</b><span>Steel &amp; power plant operations</span></div>
+          <div class="stat"><b style="font-size:30px">CHP·CPP</b><span>Coal handling &amp; captive power works</span></div>
+          <div class="stat"><b style="font-size:30px">Multi-Sector</b><span>Public sector, utilities &amp; EPC clients</span></div>
+          <div class="stat"><b>H₂</b><span>Clean-energy infrastructure at CRM-3, Bokaro Steel Plant, SAIL</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section id="why">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Why Power Link</div>
+      <h2>A partner you can rely on.</h2>
+      <p>When you bring on a new contractor, you need proof they will perform safely, stay compliant and deliver on time. Here is what you get with us.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why reveal">
+        <div class="wico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2l8 3v6c0 5-3.5 8.5-8 11-4.5-2.5-8-6-8-11V5l8-3z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3>Safety-first, audited</h3>
+        <p>Certificate of Excellence from SAIL/Bokaro Steel Plant's contractor safety audit, and a zero-accident record on major project sites.</p>
+      </div>
+      <div class="why reveal">
+        <div class="wico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
+        <h3>Fully compliant &amp; licensed</h3>
+        <p>ISO 9001:2015 certified and an MSME (Udyam-registered), with NSIC registration, GST, a valid electrical contractor licence and disciplined PF, ESI and statutory compliance — operating since 2012.</p>
+      </div>
+      <div class="why reveal">
+        <div class="wico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></div>
+        <h3>Single-window execution</h3>
+        <p>Civil, mechanical, electrical, steel structures and O&amp;M under one roof — fewer interfaces, clearer accountability, smoother projects.</p>
+      </div>
+      <div class="why reveal">
+        <div class="wico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+        <h3>Skilled, scalable manpower</h3>
+        <p>A skilled, qualified workforce mobilised quickly and scaled to your project's needs for safe, round-the-clock working.</p>
+      </div>
+      <div class="why reveal">
+        <div class="wico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+        <h3>Delivered on schedule</h3>
+        <p>Proven against tight EPC milestones and shutdown windows — from the Koderma FGD project to Coke Oven Battery-4 structures at Durgapur.</p>
+      </div>
+      <div class="why reveal">
+        <div class="wico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2l2.4 7.4H22l-6 4.4 2.3 7.2-6.3-4.6-6.3 4.6L8 13.8 2 9.4h7.6z"/></svg></div>
+        <h3>Proven across steel &amp; power</h3>
+        <p>Over a decade serving public-sector plants, power utilities and EPC majors — trusted to perform in the most demanding environments.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div class="reveal">
+        <div class="eyebrow">Get In Touch</div>
+        <h2>Let's discuss your next project.</h2>
+        <p class="lead">From O&amp;M, steel structures and shutdown jobs to complete EPC and project-level packages — design and engineering through to commissioning — we're equipped to take it on. Share your requirement or tender scope and our team will respond promptly, with the credentials, capacity and commitment to deliver.</p>
+        <div class="cinfo">
+          <div class="row">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div><b>Office</b><span>Plot No. 254, Co-operative Colony, Bokaro Steel City, Bokaro, Jharkhand – 827001<br/>Regd. Office: Plot No. 489, Bari Co-operative Colony, Bokaro Steel City – 827012</span></div>
+          </div>
+          <div class="row">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3-8.6A2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.3a2 2 0 012.1-.5c.9.3 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg>
+            <div><b>Phone</b><span>+91 97391 01400</span></div>
+          </div>
+          <div class="row">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 6L2 7"/></svg>
+            <div><b>Email</b><span>powerlinksol@gmail.com</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal">
+        <form id="contactForm">
+          <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY" />
+          <input type="hidden" name="subject" value="New enquiry — Power Link Solution website" />
+          <input type="hidden" name="from_name" value="Power Link Solution website" />
+          <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
+          <div class="two">
+            <div class="field"><label>Full Name</label><input type="text" name="name" required placeholder="Your name" /></div>
+            <div class="field"><label>Company</label><input type="text" name="company" placeholder="Company name" /></div>
+          </div>
+          <div class="two">
+            <div class="field"><label>Email</label><input type="email" name="email" required placeholder="you@example.com" /></div>
+            <div class="field"><label>Phone</label><input type="tel" name="phone" placeholder="+91 " /></div>
+          </div>
+          <div class="field"><label>How can we help?</label><textarea name="message" required placeholder="Tell us about your project or requirement…"></textarea></div>
+          <button type="submit" class="btn btn-primary">Send Enquiry →</button>
+          <div class="ok-msg" id="okMsg"></div>
+          <p class="form-note">Enquiries are emailed to powerlinksol@gmail.com. To activate: get a free key at web3forms.com and replace <code>YOUR_WEB3FORMS_ACCESS_KEY</code> above.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <a href="#home" class="brand">
+        <span class="mark">PLSPL</span>
+        <span class="bt"><b style="color:#fff">Power Link Solution</b><small>Private&nbsp;Limited</small></span>
+      </a>
+      <div class="foot-links">
+        <a href="#om">O&amp;M</a>
+        <a href="#projects">Projects</a>
+        <a href="#partners">Clients</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+    <div class="foot-creds">
+      <span>ISO 9001:2015 Certified</span>
+      <span>MSME · Udyam-JH-01-0005492</span>
+      <span>NSIC Registered</span>
+      <span>SAIL-Approved Vendor</span>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="yr"></span> Power Link Solution Pvt Ltd · CIN U52330JH2012PTC000109 · SAIL Vendor Code 1000074821</span>
+      <span>Steel &amp; Power Plant O&amp;M · Civil · Mechanical · Electrical · Structural Steel</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // sticky nav style
+  const hdr=document.getElementById('hdr');
+  addEventListener('scroll',()=>hdr.classList.toggle('scrolled',scrollY>40));
+  // mobile menu
+  const mb=document.getElementById('menuBtn'),nl=document.getElementById('navlinks');
+  mb.addEventListener('click',()=>nl.classList.toggle('open'));
+  nl.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nl.classList.remove('open')));
+  // reveal on scroll
+  const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  // client logos: try several sources, then fall back to styled text
+  // client logos load from local /logos files; if one is missing the name still shows
+  // year
+  document.getElementById('yr').textContent=new Date().getFullYear();
+  // form
+  const cf=document.getElementById('contactForm');
+  if(cf)cf.addEventListener('submit',async function(e){
+    e.preventDefault();
+    const btn=cf.querySelector('button[type=submit]');const msg=document.getElementById('okMsg');const orig=btn.textContent;
+    const key=cf.querySelector('[name=access_key]').value;
+    msg.classList.remove('err');
+    if(!key||key.indexOf('YOUR_WEB3FORMS')===0){msg.textContent='Form not yet activated — add your Web3Forms key. Meanwhile, email powerlinksol@gmail.com.';msg.classList.add('err');msg.style.display='block';return;}
+    btn.textContent='Sending…';btn.disabled=true;msg.style.display='none';
+    try{
+      const r=await fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Accept':'application/json'},body:new FormData(cf)});
+      const d=await r.json();
+      if(d.success){msg.textContent="Thank you — your enquiry has been sent. We'll be in touch shortly.";msg.style.display='block';cf.reset();btn.textContent='Sent ✓';}
+      else{msg.textContent="Sorry, we couldn't send that just now. Please email us at powerlinksol@gmail.com.";msg.classList.add('err');msg.style.display='block';btn.textContent=orig;btn.disabled=false;}
+    }catch(err){msg.textContent="Sorry, we couldn't send that just now. Please email us at powerlinksol@gmail.com.";msg.classList.add('err');msg.style.display='block';btn.textContent=orig;btn.disabled=false;}
+  });
+</script>
+</body>
+</html>
