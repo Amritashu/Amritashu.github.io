@@ -1,5 +1,4 @@
 
-<script>
   // sticky nav style
   const hdr=document.getElementById('hdr');
   addEventListener('scroll',()=>hdr.classList.toggle('scrolled',scrollY>40));
@@ -30,4 +29,3 @@
       else{msg.textContent="Sorry, we couldn't send that just now. Please email us at powerlinksol@gmail.com.";msg.classList.add('err');msg.style.display='block';btn.textContent=orig;btn.disabled=false;}
     }catch(err){msg.textContent="Sorry, we couldn't send that just now. Please email us at powerlinksol@gmail.com.";msg.classList.add('err');msg.style.display='block';btn.textContent=orig;btn.disabled=false;}
   });
-</script>
